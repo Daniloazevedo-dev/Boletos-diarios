@@ -2,12 +2,12 @@ const express = require('express');
 const app = express();
 const path = require('path');
 
-app.use(express.static("/src"));
+app.use(express.static(__dirname + '/dist'));
 
 app.listen(process.env.PORT || 8080);
 
 app.get('/*', function(req, res){
-    res.sendFile(path.join("/src" + '/index.html'));
+    res.sendFile(path.join(__dirname + '/dist/ControleBoletos/index.html'));
 })
 
 console.log("DIRNAME: " + __dirname);
